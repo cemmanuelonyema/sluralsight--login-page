@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+
+
+/*-------------------------------------------------------------*/
+/* TABLE OF CONTENTS*/
+/*-------------------------------------------------------------*/
+
+/*---------
+
+--Varibles
+
+--Base configuration
+
+--components
+    --buttons
+
+--Wrapper and child
+  --left
+  --right
+
+--Left and chilldren
+
+--Right and chilldren
+
+--Media queries and chilldren
+  --1200px above
+  --0 to 768px
+
+
+-------*/
+
+
+/*-------------------------------------------------------------*/
+/* VARIABLE CONFIGURATION*/
+/*-------------------------------------------------------------*/
+
+:root{
+  --dark-bg-color: #181818;
+  --orange-light: #f96816;
+  --orange-dark: #ff7b39;
+
+  --white:#fff;
+  --white-grey-1:#f4f4f4;
+  --white-grey-2:#ccc;
+  --white-grey-3:#aaa;
+}
+
+
+/*-------------------------------------------------------------*/
+/* BASE CONFIGURATION*/
+/*-------------------------------------------------------------*/
+
+*{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font: 300 62.5%  'Roboto', sans-serif;
+}
+
+body{
+  box-sizing: border-box;
+  background-color: var(--dark-bg-color);
+  color: var(--white);
+  overflow: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 300;
+}
+
+
+
+/*-------------------------------------------------------------*/
+/* COMPONENTS*/
+/*-------------------------------------------------------------*/
+
+/*-----------------------*/
+/*-----button-----*/
+.btn:link,
+.btn:visited{
+  display: block;
+  border-radius: 3px;
+  padding: .7rem 1.3rem;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  transition:  all .3s;
+  color: var(--white);
+
+}
+
+/*-------btn-primary-------*/
+
+.btn-primary:link,
+.btn-primary:visited{
+  background-color:  var(--orange-light);
+}
+
+.btn-primary:hover,
+.btn-primary:active{
+  background-color:var(--orange-dark);
+}
+
+.form .btn-primary{
+  width: 100%;
+}
+
+/*-------btn-secondary-------*/
+
+.btn-secondary{
+  border: 1px solid var(--white-grey-1);
+
+}
+.btn-secondary:hover{
+  color:var(--orange-light);
+  border: 1px solid var(--orange-light);
+}
+
+/*-------------------------------------------------------------*/
+/* WRAPPER AND CHILDREN*/
+/*-------------------------------------------------------------*/
+
+.wrapper{ display: flex; }
+
+.left{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* rem this property wont work without giving it a height property and value*/
+  height: 100vh;
+}
+
+.right{
+  flex: 1;
+}
+
+/*-------------------------------------------------------------*/
+/* LEFT AND CHILDREN*/
+/*-------------------------------------------------------------*/
+
+/*-----------------------*/
+/*-----Sign-in----*/
+.sign-in{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.logo-box{
+  margin-bottom: 6rem;
+  width: 30rem;
+}
+
+.logo{
+  width: 100%;
+}
+
+/*-----------------------*/
+/*-----form----*/
+.form{
+  margin-bottom: 3rem;
+  width: 80%;
+}
+
+.form-group{
+  margin-bottom: 2.5rem;
+}
+
+.label{
+ display: block;
+ font-size: 1.5rem;
+ font-weight: 500;
+}
+
+.input{
+display: inline-block;
+padding: .7rem  1.2rem;
+border-radius: 3px;
+width: 100%;
+background-color: var(--dark-bg-color);
+border: 1px solid var(--white-grey-3);
+}
+
+/*-----------------------*/
+/*-----links /  or----*/
+
+
+.links, .or,  .btn-secondary{
+  width: 60%;
+  margin: auto;
+}
+
+.links a{
+  display: block;
+  color:var(--white);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+
+}
+
+.or{
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.2rem;
+}
+
+
+.or .bar{
+  flex: auto;
+  height: 1px;
+  background-color: var(--white-grey-2);
+  border: none;  
+}
+
+.or span{
+  padding: 0 1rem;
+  font-size: 1.4rem;
+}
+
+/*-----------------------*/
+/*-----footer-----*/
+.footer{
+  color: var(--white-grey-2);
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  max-width: 80%;
+}
+
+.footer a{
+  color: var(--orange-light);
+  font-size: 1.4rem;
+}
+
+
+/*-------------------------------------------------------------*/
+/* RIGHT AND CHILDREN*/
+/*-------------------------------------------------------------*/
+
+/*-----------------------*/
+/*-----showcase-----*/
+.showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://image.ibb.co/cO9Lxq/login-bg.jpg') no-repeat center center / cover;
+  height: 100vh;
+  text-align: center;
+}
+
+.showcase-text{
+  font-size: 4.5rem;
+  color: var(--white);
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+
+
+/*-------------------------------------------------------------*/
+/* MEDIA QUERIES */
+/*-------------------------------------------------------------*/
+
+/* 1200PX ABOVE */
+@media (min-width: 1200px) {
+  .left {
+    flex: 4;
+  }
+
+  .right {
+    flex: 6;
+  }
+}
+
+/* 0PX TO 768PX */
+@media (max-width: 768px) {
+  body {
+    overflow: auto; 
+  }
+
+  .right {
+    display: none;
+  }
+
+  .logo-box {
+    width: 20rem;
+  }
+
+  .input {
+    margin-bottom: 0.7rem;
+  }
+}
